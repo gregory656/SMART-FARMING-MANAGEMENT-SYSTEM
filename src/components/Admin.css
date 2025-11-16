@@ -1,0 +1,66 @@
+.admin-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-container h1 {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 2rem;
+}
+
+.admin-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.users-list {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.users-list h2 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.users-list div {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.users-list div:hover {
+  background: #f9f9f9;
+}
+
+.user-data {
+  flex: 2;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-data h2 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.data-section {
+  margin-bottom: 2rem;
+}
+
+.data-section h3 {
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.data-section div {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eee;
+}
