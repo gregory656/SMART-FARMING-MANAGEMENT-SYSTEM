@@ -60,48 +60,101 @@ const Crops = () => {
   };
 
   return (
-    <div className="crops-container">
-      <h1>Crops Management</h1>
-      <form onSubmit={handleSubmit} className="crop-form">
-        <input
-          type="text"
-          placeholder="Crop Name"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Planting Schedule"
-          value={form.plantingSchedule}
-          onChange={(e) => setForm({ ...form, plantingSchedule: e.target.value })}
-          required
-        />
-        <textarea
-          placeholder="Advanced Notes"
-          value={form.notes}
-          onChange={(e) => setForm({ ...form, notes: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="Expected Yield"
-          value={form.expectedYield}
-          onChange={(e) => setForm({ ...form, expectedYield: e.target.value })}
-          required
-        />
-        <button type="submit">{editingId ? 'Update' : 'Add'} Crop</button>
-      </form>
-      <div className="crops-list">
-        {crops.map(crop => (
-          <div key={crop.id} className="crop-item">
-            <h3>{crop.name}</h3>
-            <p>Planting: {crop.plantingSchedule}</p>
-            <p>Expected Yield: {crop.expectedYield}</p>
-            <p>Notes: {crop.notes}</p>
-            <button onClick={() => handleEdit(crop)}>Edit</button>
-            <button onClick={() => handleDelete(crop.id)}>Delete</button>
+    <div className="container mt-4">
+      <h1 className="mb-4">Crops Management</h1>
+      <div className="row">
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-header">
+              <h5 className="card-title mb-0">{editingId ? 'Edit Crop' : 'Add New Crop'}</h5>
+            </div>
+            <div className="card-body">
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Crop Name"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Planting Schedule"
+                    value={form.plantingSchedule}
+                    onChange={(e) => setForm({ ...form, plantingSchedule: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <textarea
+                    className="form-control"
+                    placeholder="Make Notes"
+                    value={form.notes}
+                    onChange={(e) => setForm({ ...form, notes: e.target.value })}
+                    rows="3"
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Expected Yield"
+                    value={form.expectedYield}
+                    onChange={(e) => setForm({ ...form, expectedYield: e.target.value })}
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  {editingId ? 'Update' : 'Add'} Crop
+                </button>
+              </form>
+            </div>
           </div>
-        ))}
+        </div>
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-header">
+              <h5 className="card-title mb-0">Your Crops</h5>
+            </div>
+            <div className="card-body">
+              {crops.length === 0 ? (
+                <p className="text-muted">No crops added yet.</p>
+              ) : (
+                <div className="list-group">
+                  {crops.map(crop => (
+                    <div key={crop.id} className="list-group-item">
+                      <div className="d-flex w-100 justify-content-between">
+                        <h6 className="mb-1">{crop.name}</h6>
+                        <div>
+                          <button
+                            className="btn btn-sm btn-outline-primary me-2"
+                            onClick={() => handleEdit(crop)}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className="btn btn-sm btn-outline-danger"
+                            onClick={() => handleDelete(crop.id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                      <p className="mb-1">Planting: {crop.plantingSchedule}</p>
+                      <p className="mb-1">Expected Yield: {crop.expectedYield}</p>
+                      {crop.notes && <p className="mb-0 text-muted">Notes: {crop.notes}</p>}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

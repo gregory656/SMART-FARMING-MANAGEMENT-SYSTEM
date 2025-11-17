@@ -7,6 +7,7 @@ import './More.css';
 
 const More = () => {
   const [activeTab, setActiveTab] = useState('about');
+  const [expandedBlogs, setExpandedBlogs] = useState({});
   const { logout, currentUser } = useAuth();
   const navigate = useNavigate();
 
@@ -46,13 +47,13 @@ const More = () => {
                   </div>
                   {info.id === 2 && (
                     <div className="about-links">
-                      <a href="https://github.com/gregorystephen" target="_blank" rel="noopener noreferrer" className="about-link github">
+                      <a href="https://github.com/gregory656" target="_blank" rel="noopener noreferrer" className="about-link github">
                         <span className="icon">🐙</span> GitHub
                       </a>
-                      <a href="https://instagram.com/gregorystephen" target="_blank" rel="noopener noreferrer" className="about-link instagram">
+                      <a href="https://instagram.com/reddevcode" target="_blank" rel="noopener noreferrer" className="about-link instagram">
                         <span className="icon">📷</span> Instagram
                       </a>
-                      <a href="https://wa.me/0719637416" target="_blank" rel="noopener noreferrer" className="about-link whatsapp">
+                      <a href="wa.me/0719637416" target="_blank" rel="noopener noreferrer" className="about-link whatsapp">
                         <span className="icon">💬</span> WhatsApp
                       </a>
                     </div>
@@ -113,8 +114,6 @@ const More = () => {
           </div>
         );
       case 'blogs':
-        const [expandedBlogs, setExpandedBlogs] = useState({});
-
         const toggleBlogExpansion = (blogId) => {
           setExpandedBlogs(prev => ({
             ...prev,
@@ -149,22 +148,26 @@ const More = () => {
         return (
           <div className="tab-content">
             <h2>Latest Blogs</h2>
-            <div className="blogs-container">
+            <div className="row">
               {blogs.map(blog => (
-                <div key={blog.id} className="blog-card">
-                  <div className="blog-image">{blog.image}</div>
-                  <h3 className="blog-title">{blog.title}</h3>
-                  <div className="blog-content">
-                    <p className="blog-excerpt">{blog.excerpt}</p>
-                    {expandedBlogs[blog.id] && (
-                      <p className="blog-full-content">{blog.content}</p>
-                    )}
-                    <button
-                      className={expandedBlogs[blog.id] ? "read-less-btn" : "read-more-btn"}
-                      onClick={() => toggleBlogExpansion(blog.id)}
-                    >
-                      {expandedBlogs[blog.id] ? "Read Less" : "Read More"}
-                    </button>
+                <div key={blog.id} className="col-md-6 mb-4">
+                  <div className="card h-100">
+                    <div className="card-body">
+                      <div className="text-center mb-3">
+                        <span style={{ fontSize: '3rem' }}>{blog.image}</span>
+                      </div>
+                      <h5 className="card-title">{blog.title}</h5>
+                      <p className="card-text">{blog.excerpt}</p>
+                      {expandedBlogs[blog.id] && (
+                        <p className="card-text">{blog.content}</p>
+                      )}
+                      <button
+                        className="btn btn-outline-primary btn-sm"
+                        onClick={() => toggleBlogExpansion(blog.id)}
+                      >
+                        {expandedBlogs[blog.id] ? "Read Less" : "Read More"}
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -271,10 +274,10 @@ const More = () => {
             <div className="developer-accounts">
               <h3>Developer Accounts</h3>
               <div className="account-links">
-                <a href="https://github.com/gregorystephen" target="_blank" rel="noopener noreferrer" className="account-link github">
+                <a href="https://github.com/gregory656" target="_blank" rel="noopener noreferrer" className="account-link github">
                   <span className="icon">🐙</span> GitHub
                 </a>
-                <a href="https://instagram.com/gregorystephen" target="_blank" rel="noopener noreferrer" className="account-link instagram">
+                <a href="https://instagram.com/reddevcode" target="_blank" rel="noopener noreferrer" className="account-link instagram">
                   <span className="icon">📷</span> Instagram
                 </a>
                 <a href="https://wa.me/0719637416" target="_blank" rel="noopener noreferrer" className="account-link whatsapp">
@@ -290,7 +293,7 @@ const More = () => {
               <button type="submit">Send Message</button>
             </form>
             <div className="contact-info">
-              <p>Phone: <a href="https://wa.me/0719637416">wa.me/0719637416</a></p>
+              <p>Phone: <a href="https://wa.me/0719637416">0719637416</a></p>
               <p>Email: gregorystephen2006@gmail.com</p>
             </div>
           </div>
@@ -326,16 +329,64 @@ const More = () => {
   };
 
   return (
-    <div className="more-container">
-      <div className="tabs">
-        <button onClick={() => setActiveTab('about')}>About Us</button>
-        <button onClick={() => setActiveTab('services')}>Services</button>
-        <button onClick={() => setActiveTab('blogs')}>Blogs</button>
-        <button onClick={() => setActiveTab('gallery')}>Gallery</button>
-        <button onClick={() => setActiveTab('contact')}>Contact Us</button>
-        <button onClick={() => setActiveTab('settings')}>Settings</button>
+    <div className="container mt-4">
+      <div className="row">
+        <div className="col-12">
+          <ul className="nav nav-tabs" role="tablist">
+            <li className="nav-item" role="presentation">
+              <button
+                className={`nav-link ${activeTab === 'about' ? 'active' : ''}`}
+                onClick={() => setActiveTab('about')}
+              >
+                About Us
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className={`nav-link ${activeTab === 'services' ? 'active' : ''}`}
+                onClick={() => setActiveTab('services')}
+              >
+                Services
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className={`nav-link ${activeTab === 'blogs' ? 'active' : ''}`}
+                onClick={() => setActiveTab('blogs')}
+              >
+                Blogs
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className={`nav-link ${activeTab === 'gallery' ? 'active' : ''}`}
+                onClick={() => setActiveTab('gallery')}
+              >
+                Gallery
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className={`nav-link ${activeTab === 'contact' ? 'active' : ''}`}
+                onClick={() => setActiveTab('contact')}
+              >
+                Contact Us
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className={`nav-link ${activeTab === 'settings' ? 'active' : ''}`}
+                onClick={() => setActiveTab('settings')}
+              >
+                Settings
+              </button>
+            </li>
+          </ul>
+          <div className="tab-content mt-4">
+            {renderTab()}
+          </div>
+        </div>
       </div>
-      {renderTab()}
     </div>
   );
 };

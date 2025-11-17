@@ -13,7 +13,7 @@ const Admin = () => {
 
 
   useEffect(() => {
-    // Check if user is admin (you might want to use Firebase custom claims for this)
+    // Check if user is admin (might want to use Firebase custom claims for this)
     if (currentUser && currentUser.email === 'admin@smartfarm.com') {
       const fetchUsers = async () => {
         const cropsRef = collection(db, 'users');
@@ -48,31 +48,62 @@ const Admin = () => {
   }
 
   return (
-    <div className="admin-container">
-      <h1>Admin Dashboard</h1>
-      <div className="admin-content">
-        <div className="users-list">
-          <h2>Users</h2>
-          {users.map(userId => (
-            <div key={userId} onClick={() => { setSelectedUser(userId); loadUserData(userId); }}>
-              {userId}
+    <div className="container-fluid mt-4">
+      <h1 className="mb-4">Admin Dashboard</h1>
+      <div className="row">
+        <div className="col-md-4">
+          <div className="card">
+            <div className="card-header">
+              <h2 className="card-title h5 mb-0">Users</h2>
             </div>
-          ))}
+            <div className="card-body">
+              <div className="list-group">
+                {users.map(userId => (
+                  <button
+                    key={userId}
+                    type="button"
+                    className="list-group-item list-group-item-action"
+                    onClick={() => { setSelectedUser(userId); loadUserData(userId); }}
+                  >
+                    {userId}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
         {selectedUser && (
-          <div className="user-data">
-            <h2>Data for {selectedUser}</h2>
-            <div className="data-section">
-              <h3>Crops</h3>
-              {userData.crops.map(crop => <div key={crop.id}>{crop.name}</div>)}
-            </div>
-            <div className="data-section">
-              <h3>Livestock</h3>
-              {userData.livestock.map(item => <div key={item.id}>{item.type}</div>)}
-            </div>
-            <div className="data-section">
-              <h3>Finance</h3>
-              {userData.finance.map(item => <div key={item.id}>{item.description}: ${item.amount}</div>)}
+          <div className="col-md-8">
+            <div className="card">
+              <div className="card-header">
+                <h2 className="card-title h5 mb-0">Data for {selectedUser}</h2>
+              </div>
+              <div className="card-body">
+                <div className="mb-4">
+                  <h3 className="h6">Crops</h3>
+                  <ul className="list-group">
+                    {userData.crops.map(crop => (
+                      <li key={crop.id} className="list-group-item">{crop.name}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <h3 className="h6">Livestock</h3>
+                  <ul className="list-group">
+                    {userData.livestock.map(item => (
+                      <li key={item.id} className="list-group-item">{item.type}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <h3 className="h6">Finance</h3>
+                  <ul className="list-group">
+                    {userData.finance.map(item => (
+                      <li key={item.id} className="list-group-item">{item.description}: ${item.amount}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         )}
