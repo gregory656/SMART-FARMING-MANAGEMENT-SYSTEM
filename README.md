@@ -1,4 +1,12 @@
-# React + Vite
+# SmartFarm
+
+A React application built with Vite for smart farming management.
+
+## Live Demo
+
+Check out the live demo: [https://smartfarm-b754e.web.app](https://smartfarm-b754e.web.app)
+
+## Getting Started
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
