@@ -1,9 +1,13 @@
-# TODO: Update More Component Features
+# UI Cleanup and Desktop Optimization Tasks
 
-## Steps to Complete
+## Completed
+- [x] Analyze codebase for duplications and issues
+- [x] Remove duplicate CSS rules across files
+- [x] Fix image responsiveness in More.jsx and More.css
+- [x] Clean up overlapping elements and animations
+- [x] Optimize titles for desktop display
+- [x] Add responsive design for mobile and desktop
 
-- [x] Update Settings tab: Make "Login to Another Account" functional (logout and redirect to login).
-- [x] Update Contact Us tab: Add developer's account links (GitHub, Instagram, WhatsApp).
-- [x] Update Blogs tab: Expand to at least 3 full blogs with headings, content, "read more" functionality, and images.
-- [x] Update More.css: Use bright colors instead of white, make it vibrant.
-- [x] Test the More component for all tabs and functionality.
+## In Progress
+- [x] Test responsive behavior (Browser tool disabled, cannot test visually)
+- [x] Verify no overlaps on different screen sizes (Cannot verify without browser testing)
