@@ -19,5 +19,5 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
-// Replace with your actual OpenWeather API key
+// OpenWeather API key
 export const WEATHER_API_KEY = "a3e032a9accdc878062290ec8578c465";

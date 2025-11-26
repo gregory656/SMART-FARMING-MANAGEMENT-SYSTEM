@@ -228,23 +228,33 @@ const Sidebar = () => {
 
       <ul className="sidebar-links">
         <li>
-          <span onClick={() => navigate("/")} className="sidebar-icon">🏠</span>
+          <span onClick={() => navigate("/")} className="sidebar-icon">
+            <img src="dashboard.png" alt="Dashboard" style={{ width: '20px', height: '20px' }} />
+          </span>
           <span onClick={() => navigate("/")} className="sidebar-text">Dashboard</span>
         </li>
         <li>
-          <span onClick={() => navigate("/crops")} className="sidebar-icon">🌾</span>
+          <span onClick={() => navigate("/crops")} className="sidebar-icon">
+            <img src="crops.png" alt="Crops" style={{ width: '20px', height: '20px' }} />
+          </span>
           <span onClick={() => navigate("/crops")} className="sidebar-text">Crops</span>
         </li>
         <li>
-          <span onClick={() => navigate("/livestock")} className="sidebar-icon">🐄</span>
+          <span onClick={() => navigate("/livestock")} className="sidebar-icon">
+            <img src="livestock.png" alt="Livestock" style={{ width: '20px', height: '20px' }} />
+          </span>
           <span onClick={() => navigate("/livestock")} className="sidebar-text">Livestock</span>
         </li>
         <li>
-          <span onClick={() => navigate("/reports")} className="sidebar-icon">📊</span>
+          <span onClick={() => navigate("/reports")} className="sidebar-icon">
+            <img src="reports.png" alt="Reports" style={{ width: '20px', height: '20px' }} />
+          </span>
           <span onClick={() => navigate("/reports")} className="sidebar-text">Reports</span>
         </li>
         <li>
-          <span onClick={() => navigate("/more")} className="sidebar-icon">⚙</span>
+          <span onClick={() => navigate("/more")} className="sidebar-icon">
+            <img src="more.png" alt="More" style={{ width: '20px', height: '20px' }} />
+          </span>
           <span onClick={() => navigate("/more")} className="sidebar-text">More</span>
         </li>
       </ul>
