@@ -22,7 +22,7 @@ const More = () => {
         const aboutInfo = [
           {
             id: 1,
-            icon: "steve.png",
+            icon: "pinktractor.jpg",
             title: "Our Mission",
             description: "To promote sustainable agriculture through technology-driven solutions that help farmers optimize their operations, reduce environmental impact, and increase productivity for a better future."
           },
@@ -69,31 +69,31 @@ const More = () => {
         const services = [
           {
             id: 1,
-            icon: "steve.png",
+            icon: "sprayer2.jpg",
             title: "Smart Irrigation Management",
             description: "Optimize water usage with AI-driven irrigation systems that monitor soil moisture levels and automatically adjust watering schedules to prevent overwatering and conserve resources."
           },
           {
             id: 2,
-            icon: "steve.png",
+            icon: "pinktractor.jpg",
             title: "Pest Control Monitoring",
             description: "Advanced pest detection systems using sensors and cameras to identify pest infestations early, allowing for targeted interventions and reducing the need for broad-spectrum pesticides."
           },
           {
             id: 3,
-            icon: "steve.png",
+            icon: "beautifulland.jpg",
             title: "Financial Planning & Farm Budgeting",
             description: "Comprehensive financial management tools to track expenses, plan budgets, monitor profitability, and make data-driven decisions for sustainable farm operations."
           },
           {
             id: 4,
-            icon: "steve.png",
+            icon: "greentractor.jpg",
             title: "Yield Tracking",
             description: "Real-time yield monitoring and prediction analytics that help farmers optimize crop production, track performance metrics, and improve future planning."
           },
           {
             id: 5,
-            icon: "steve.png",
+            icon: "harvester3.jpg",
             title: "Resource Optimization",
             description: "Intelligent resource management systems that optimize the use of fertilizers, pesticides, and other inputs while maximizing productivity and minimizing environmental impact."
           }
@@ -129,21 +129,21 @@ const More = () => {
           {
             id: 1,
             title: "Best Farming Practices for Sustainable Agriculture",
-            image: "steve.png",
+            image: "harvester1.jpg",
             excerpt: "Sustainable farming practices are essential for long-term agricultural success. This comprehensive guide covers crop rotation, organic pest control, water conservation techniques, and soil health management.",
             content: "Sustainable farming practices are essential for long-term agricultural success. This comprehensive guide covers crop rotation, organic pest control, water conservation techniques, and soil health management. By implementing these practices, farmers can reduce costs, improve soil quality, and create a more resilient farming operation. Key topics include integrated pest management, precision irrigation, and regenerative agriculture techniques that restore soil health and biodiversity. Learn about the benefits of cover cropping, the importance of maintaining soil organic matter, and how to implement conservation tillage practices. Discover how sustainable farming not only protects the environment but also improves long-term profitability through reduced input costs and enhanced ecosystem services."
           },
           {
             id: 2,
             title: "Revolutionizing Agriculture with IoT and Smart Technologies",
-            image: "steve.png",
+            image: "seeder2.jpg",
             excerpt: "The Internet of Things (IoT) is revolutionizing agriculture by providing real-time data and automation capabilities. Smart sensors monitor soil moisture, temperature, and nutrient levels.",
             content: "The Internet of Things (IoT) is revolutionizing agriculture by providing real-time data and automation capabilities. Smart sensors monitor soil moisture, temperature, and nutrient levels, while automated irrigation systems optimize water usage. Drones equipped with multispectral cameras provide detailed crop health analysis, and AI-powered analytics help predict yields and detect problems early. This blog explores the latest IoT innovations and how they're helping farmers increase productivity and reduce waste. Discover how precision agriculture technologies are enabling variable rate application of fertilizers and pesticides, reducing costs while improving environmental outcomes. Learn about the integration of weather forecasting, soil sensors, and automated machinery to create truly smart farming operations."
           },
           {
             id: 3,
             title: "From Struggle to Success: Inspiring Farmer Stories",
-            image: "steve.png",
+            image: "sheep1.jpg",
             excerpt: "Every successful farmer has a unique journey filled with challenges and triumphs. This collection of inspiring stories showcases individuals who overcame adversity through innovation.",
             content: "Every successful farmer has a unique journey filled with challenges and triumphs. This collection of inspiring stories showcases individuals who overcame adversity through innovation, perseverance, and smart technology adoption. From small-scale organic farmers to large commercial operations, these stories demonstrate how embracing new technologies and sustainable practices can lead to remarkable transformations. Learn from their experiences and discover the strategies that turned struggling operations into thriving businesses. Meet farmers who successfully transitioned to regenerative agriculture, implemented precision farming technologies, and built resilient operations that weather market fluctuations and climate challenges. These stories highlight the importance of continuous learning, adaptation, and community support in agricultural success."
           }
@@ -183,7 +183,7 @@ const More = () => {
           {
             id: 1,
             name: "Tractor",
-            image: "https://picsum.photos/seed/tractor/200/200",
+            image: "pinktractor.jpg",
             price: "$15,000",
             quality: "Heavy Duty",
             quantity: "1 unit",
@@ -192,7 +192,7 @@ const More = () => {
           {
             id: 2,
             name: "Irrigation System",
-            image: "https://picsum.photos/seed/irrigation/200/200",
+            image: "sprayer3.jpg",
             price: "$2,500",
             quality: "Drip Irrigation",
             quantity: "1 acre kit",
@@ -201,7 +201,7 @@ const More = () => {
           {
             id: 3,
             name: "Plow",
-            image: "https://picsum.photos/seed/plow/200/200",
+            image: "plow1.jpg",
             price: "$800",
             quality: "Steel Blade",
             quantity: "1 unit",
@@ -210,7 +210,7 @@ const More = () => {
           {
             id: 4,
             name: "Seeder",
-            image: "https://picsum.photos/seed/seeder/200/200",
+            image: "seeder1.jpg",
             price: "$1,200",
             quality: "Precision Seeding",
             quantity: "1 unit",
@@ -219,7 +219,7 @@ const More = () => {
           {
             id: 5,
             name: "Harvester",
-            image: "https://picsum.photos/seed/harvester/200/200",
+            image: "harvester3.jpg",
             price: "$25,000",
             quality: "Combine Harvester",
             quantity: "1 unit",
@@ -228,7 +228,7 @@ const More = () => {
           {
             id: 6,
             name: "Sprayer",
-            image: "https://picsum.photos/seed/sprayer/200/200",
+            image: "spray2.jpg",
             price: "$600",
             quality: "Backpack Sprayer",
             quantity: "1 unit",
