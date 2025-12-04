@@ -18,7 +18,7 @@ const More = () => {
 
   const renderTab = () => {
     switch (activeTab) {
-      case 'about':
+      case 'about': {
         const aboutInfo = [
           {
             id: 1,
@@ -65,7 +65,8 @@ const More = () => {
             </div>
           </div>
         );
-      case 'services':
+      }
+      case 'services': {
         const services = [
           {
             id: 1,
@@ -117,7 +118,8 @@ const More = () => {
             </div>
           </div>
         );
-      case 'blogs':
+      }
+      case 'blogs': {
         const toggleBlogExpansion = (blogId) => {
           setExpandedBlogs(prev => ({
             ...prev,
@@ -178,7 +180,8 @@ const More = () => {
             </div>
           </div>
         );
-      case 'gallery':
+      }
+      case 'gallery': {
         const farmingTools = [
           {
             id: 1,
@@ -258,6 +261,7 @@ const More = () => {
             </div>
           </div>
         );
+      }
       case 'contact': {
         const handleContactSubmit = async (e) => {
           e.preventDefault();
@@ -305,7 +309,7 @@ const More = () => {
           </div>
         );
       }
-      case 'settings':
+      case 'settings': {
         const handleLoginAnother = async () => {
           await logout();
           navigate('/');
@@ -329,6 +333,7 @@ const More = () => {
             </div>
           </div>
         );
+      }
       default:
         return null;
     }
